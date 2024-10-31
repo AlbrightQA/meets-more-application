@@ -1,0 +1,17 @@
+# Playwright
+integration/node_modules/
+integration/test-results/
+integration/playwright-report/
+integration/blob-report/
+integration/playwright/.cache/
+
+# Other common ignores
+.DS_Store
+integration/.DS_Store
+integration/.env
+.vscode/settings.json
+*.log
+
+# Dependancy Directories
+node_modules/
+test-results/.last-run.json
