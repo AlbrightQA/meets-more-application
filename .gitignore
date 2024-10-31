@@ -4,7 +4,8 @@ integration/test-results/
 integration/playwright-report/
 integration/blob-report/
 integration/playwright/.cache/
-#
+integration/storageState/*
+
 # Other common ignores
 .DS_Store
 integration/.DS_Store
