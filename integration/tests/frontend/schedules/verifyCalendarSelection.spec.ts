@@ -1,11 +1,12 @@
-import { test, expect } from '@playwright/test';
-import dayjs from 'dayjs';
 import { createContext } from '@/utilities/createContext';
+import { expect, test } from '@playwright/test';
+import dayjs from 'dayjs';
 
 test.describe('Calendar Tests', () => {
     test('Verify calendar selection and API responses', async () => {
         console.log('>>>VERIFY API RESPONSE ON CALENDAR SELECTION<<<');
         const { page, close } = await createContext('business');
+
         // Navigate to schedules page
         await page.goto('/account/schedules');
 
@@ -24,18 +25,18 @@ test.describe('Calendar Tests', () => {
 
         // First click - could be either create or delete
         await page.locator('[data-is-disabled="false"]').first().click();
-        
+
         const firstResponse = await page.waitForResponse(
-            response => (response.url().includes('/api/schedules') || response.url().includes('/api/schedules/delete')) 
+            response => (response.url().includes('/api/schedules') || response.url().includes('/api/schedules/delete'))
                 && response.request().method() === 'POST'
         );
         expect(firstResponse.status()).toBe(201);
 
         // Second click - should be the opposite of first response
         await page.locator('[data-is-disabled="false"]').first().click();
-        
+
         const secondResponse = await page.waitForResponse(
-            response => (response.url().includes('/api/schedules') || response.url().includes('/api/schedules/delete')) 
+            response => (response.url().includes('/api/schedules') || response.url().includes('/api/schedules/delete'))
                 && response.request().method() === 'POST'
         );
         expect(secondResponse.status()).toBe(201);
@@ -53,4 +54,4 @@ test.describe('Calendar Tests', () => {
 
         await close();
     });
-}); 
+});
