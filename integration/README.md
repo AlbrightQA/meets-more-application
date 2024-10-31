@@ -40,11 +40,21 @@ Make sure you have the following installed:
 - **Trailing Whitespace**: Extra spaces will be trimmed on save.
 - **Semicolon**: Semicolons will be inserted upon saving.
 
-## Usage
-To run the project, use the following command:
+## Storage State Files
+
+To set up the necessary storage state files for the project, you can create the following files in the `integration/storageState` directory:
+
+1. **BusinessAccessToken.json**
+2. **BusinessLoginState.json**
+
+You can create these files using the following commands:
+
 ```bash
-npm start
+cd integration/storageState
+touch BusinessAccessToken.json BusinessLoginState.json
 ```
+
+After creating these files, you can modify them as needed for your local environment.
 
 ### Running Tests
 To run the tests, navigate to the `integration` directory and use the following command:
