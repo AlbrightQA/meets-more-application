@@ -27,7 +27,7 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     ['html', { outputFile: './playwright-report/index.html' }],
-    ['junit', {outputFile: './playwright-report/playwright-results.xml' }]
+    ['junit', { outputFile: './playwright-report/playwright-results.xml' }]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -35,7 +35,7 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    headless: false,
+    headless: true,
   },
 
   /* Configure projects for major browsers */
@@ -46,9 +46,9 @@ export default defineConfig({
     },
     {
       name: 'chromium',
-      use: { 
-        ...devices['Desktop Chrome'], 
-        baseURL: 'https://meetsmore.com/' 
+      use: {
+        ...devices['Desktop Chrome'],
+        baseURL: 'https://meetsmore.com/'
       },
       dependencies: ['setup']
     },
