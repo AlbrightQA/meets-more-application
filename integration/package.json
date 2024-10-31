@@ -1,0 +1,27 @@
+{
+  "name": "meets-more-integration",
+  "version": "1.0.0",
+  "description": "This is Evan Albright's Playwright Repository for the Meets More Integration project.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbrightQA/meets-more-integration.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlbrightQA/meets-more-integration/issues"
+  },
+  "homepage": "https://github.com/AlbrightQA/meets-more-integration#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.48.2",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.8.6",
+    "fs-extra": "^11.2.0"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.13"
+  }
+}
