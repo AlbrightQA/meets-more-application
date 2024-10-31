@@ -14,34 +14,21 @@ Make sure you have the following installed:
 
 ## Installation
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/AlbrightQA/meets-more-integration.git
-   cd meets-more-integration
-   ```
+```bash
+git clone https://github.com/AlbrightQA/meets-more-integration.git
+cd meets-more-integration
+```
 
 2. Install dependencies:
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
 3. (Optional) Install recommended VS Code extensions:
    - Open the project in VS Code.
    - You will be prompted to install recommended extensions. Accept the prompt.
 
 ## Configuration
-- **EditorConfig**: The project includes a `.editorconfig` file to maintain consistent coding styles across different editors.
-- **VS Code Settings**: The `.vscode/settings.json` file contains specific settings for VS Code users, including:
-  - Automatic formatting on save
-  - Semicolon enforcement
-  - Indentation and line length settings
-
-### Important Settings
-- **Max Line Length**: Lines longer than 100 characters will be visually indicated and wrapped.
-- **Trailing Whitespace**: Extra spaces will be trimmed on save.
-- **Semicolon**: Semicolons will be inserted upon saving.
-
-## Storage State Files
-
 To set up the necessary storage state files for the project, you can create the following files in the `integration/storageState` directory:
 
 1. **BusinessAccessToken.json**
@@ -51,10 +38,11 @@ You can create these files using the following commands:
 
 ```bash
 cd integration/storageState
-touch BusinessAccessToken.json BusinessLoginState.json
+New-Item -Name BusinessAccessToken.json -ItemType File
+New-Item -Name BusinessLoginState.json -ItemType File
 ```
 
-After creating these files, you can modify them as needed for your local environment.
+After creating these files, global.setup will be able to store the necessary information.
 
 ### Running Tests
 To run the tests, navigate to the `integration` directory and use the following command:
