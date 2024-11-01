@@ -6,6 +6,7 @@ When hired, I plan to focus on the following key areas to enhance the quality as
 - **Implement Secrets Manager** to obfuscate sensitive data.
 - **Collaborate with development** to implement data-testid's on existing elements and all elements going forward for better test targeting.
 - **Train QA team** on how to effectively use the Playwright project to maximize its benefits.
+- **Advocate for inline testing** to ensure that tests are closely integrated with the codebase, allowing for immediate feedback on changes and reducing the likelihood of regressions.
 
 ## Overview
 The **Meets More Application** project is a Playwright repository designed to test the frontend and API of the Meets More application, and to demonstrate what benefits Evan Albright can bring to the team.
