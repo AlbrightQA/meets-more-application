@@ -1,6 +1,6 @@
 ## Intentions Moving Forward
 
-If hired, I plan to focus on the following key areas to enhance the quality assurance process:
+When hired, I plan to focus on the following key areas to enhance the quality assurance process:
 
 - **Work with stakeholders** to identify critical test flows and automate those first.
 - **Implement Secrets Manager** to obfuscate sensitive data.
@@ -17,7 +17,7 @@ This project includes several quality of life features that enhance the developm
 - **GitHub Workflow**: Automatically runs tests when committing to a pull request, ensuring code quality and reducing manual testing efforts.
 - **Global Setup**: A `global.setup` script that logs in, saves the storage state, and stores the authentication token for future use, facilitating seamless API testing.
 - **Auto-Formatting**: Automatically corrects indentation, missing semicolons, unused imports, and other formatting issues, ensuring consistent code style and reducing formatting issues.
-- **Utility Functions**: A `utilities` folder containing helper functions for common tasks such as date formatting, API requests, and more.
+- **Utility Functions**: A `utilities` folder containing helper functions for common tasks such as context creation, API requests, and more.
 
 ## Getting Started
 These instructions will help you set up the project locally for development and testing purposes.
@@ -53,7 +53,7 @@ To set up the necessary storage state files for the project, you need to create 
 You can create these files using the following commands:
 
 ```bash
-cd integration/storageState
+cd integration && mkdir -p storageState && cd storageState
 New-Item -Name BusinessAccessToken.json -ItemType File
 New-Item -Name BusinessLoginState.json -ItemType File
 ```
@@ -66,9 +66,13 @@ Run the tests using the following commands:
 cd integration
 npx playwright test /tests
 ```
-Or to target a specific test:
+To target a specific test file, use the following command. Replace `<path-to-your-test-file>` with the relative path to the test file you want to run:
 ```bash
-npx playwright test /tests/frontend/service/verifyServiceList.spec.ts
+npx playwright test <path-to-your-test-file>
+```
+For example:
+```bash
+npx playwright test /tests/frontend/service/yourTestFile.spec.ts
 ```
 
 ## Contributing
