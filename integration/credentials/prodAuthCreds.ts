@@ -1,19 +1,16 @@
 import * as dotenv from 'dotenv';
 import * as path from 'path';
 
-// Load environment variables from the .env file in the credentials folder
-const envPath = path.resolve(__dirname, 'credentials/.env');
-console.log('Loading .env file from:', envPath);
-dotenv.config({ path: envPath });
+dotenv.config({ path: path.join(__dirname, '.env') });
 
 interface Credentials {
     email: string;
     password: string;
 }
 
+// Plain text credentials are imported in the interest of ease of use for this specific demo.
+// Going forward I will advocate for Secrets Manager.
 export async function prodAuthCreds(): Promise<Credentials> {
-    return {
-        email: process.env.EMAIL || '',
-        password: process.env.PASSWORD || '',
-    };
+    const { EMAIL = '', PASSWORD = '' } = process.env;
+    return { email: EMAIL, password: PASSWORD };
 }
