@@ -1,6 +1,6 @@
-import { chromium, test as setup, Page, Browser } from "@playwright/test"
-import { prodAuthCreds } from "../credentials/prodAuthCreds"
-import { ProjectSettings } from "../projectSettings"
+import { prodAuthCreds } from "@/credentials/prodAuthCreds";
+import { ProjectSettings } from "@/projectSettings";
+import { Browser, chromium, Page, test as setup } from "@playwright/test";
 import fs from 'fs';
 
 interface Credentials {
@@ -24,7 +24,8 @@ async function setupUser(creds: Credentials, storageState: string): Promise<void
                 if (authHeader && authHeader.startsWith('Bearer ')) {
                     const bearerToken = authHeader.split('Bearer ')[1];
                     let filePath: string = ProjectSettings.storageStateBusinessToken;
-                    fs.writeFileSync(filePath, bearerToken);
+                    const tokenObject = { accessToken: bearerToken };
+                    fs.writeFileSync(filePath, JSON.stringify(tokenObject));
                 }
             } catch (error) {
                 console.error(`Error processing Bearer token: ${error}`);
@@ -34,10 +35,10 @@ async function setupUser(creds: Credentials, storageState: string): Promise<void
 
     await page.goto('/login');
     await page.locator('input[name="email"]').fill(creds.email);
-    await page.locator('button[type="submit"]:has-text("次へ")').click();
+    await page.locator('button[type="submit"].MuiButton-containedPrimary').click();
     await page.locator('input[name="password"]').fill(creds.password);
-    await page.locator('button[type="submit"]:has-text("ログイン")').click();
-    
+    await page.locator('button[type="submit"].MuiButton-containedPrimary').click();
+
     await page.waitForResponse('**/api/pros/meets/count');
 
     await page.context().storageState({ path: storageState });

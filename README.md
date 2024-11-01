@@ -1,5 +1,3 @@
-# Meets More Integration
-
 ## Overview
 The **Meets More Integration** project is a Playwright repository designed to test the frontend of the Meets More application. This repository includes configurations for consistent coding styles and formatting across different environments.
 

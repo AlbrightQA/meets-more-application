@@ -1,3 +1,7 @@
+// I believe best practice is to have a single 'expect' statement per test. But in the interest of CRUD operations, I wanted to remove the Calendar selection as well so the test can start fresh.
+// A reason it looks redundant lso check for /schedules and /schedules/delete on the off chance that proper CRUD steps were not taken previously.
+// The test also expects the API calls to have the correct createdAt and updatedAt dates, which may be unnecessary.
+
 import { createContext } from '@/utilities/createContext';
 import { expect, test } from '@playwright/test';
 import dayjs from 'dayjs';

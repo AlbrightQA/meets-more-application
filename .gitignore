@@ -4,9 +4,7 @@ integration/test-results/
 integration/playwright-report/
 integration/blob-report/
 integration/playwright/.cache/
-# Ignore all files in storageState but keep the directory
 integration/storageState/*
-!integration/storageState/storageState.template.json
 
 # Other common ignores
 .DS_Store
