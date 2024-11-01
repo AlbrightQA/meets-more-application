@@ -1,5 +1,5 @@
-// I believe best practice is to have a single 'expect' statement per test. But in the interest of CRUD operations, I wanted to remove the Calendar selection as well so the test can start fresh.
-// A reason it looks redundant lso check for /schedules and /schedules/delete on the off chance that proper CRUD steps were not taken previously.
+// Best practice is to have a single 'expect' statement per test. But in the interest of CRUD operations, I wanted to remove the Calendar selection as well so the test can start fresh.
+// Also check for /schedules and /schedules/delete on the off chance that proper CRUD steps were not taken previously.
 // The test also expects the API calls to have the correct createdAt and updatedAt dates, which may be unnecessary.
 
 import { createContext } from '@/utilities/createContext';
@@ -8,7 +8,7 @@ import dayjs from 'dayjs';
 
 test.describe('Calendar Tests', () => {
     test('Verify calendar selection and API responses', async () => {
-        console.log('>>>VERIFY API RESPONSE ON CALENDAR SELECTION<<<');
+        console.log('>>>VERIFY API RESPONSE ON MANUAL CALENDAR SELECTION<<<');
         const { page, close } = await createContext('business');
 
         // Navigate to schedules page
@@ -23,6 +23,7 @@ test.describe('Calendar Tests', () => {
         } catch (error) {
             console.log('Tooltip not found, continuing with test');
         }
+        console.log('tooltip handled');
 
         // Get today's date in ISO format (YYYY-MM-DD)
         const today = dayjs().format('YYYY-MM-DD');
@@ -35,6 +36,7 @@ test.describe('Calendar Tests', () => {
                 && response.request().method() === 'POST'
         );
         expect(firstResponse.status()).toBe(201);
+        console.log('first response verified');
 
         // Second click - should be the opposite of first response
         await page.locator('[data-is-disabled="false"]').first().click();
@@ -44,6 +46,7 @@ test.describe('Calendar Tests', () => {
                 && response.request().method() === 'POST'
         );
         expect(secondResponse.status()).toBe(201);
+        console.log('second response verified');
 
         // If either response was a create, verify the dates
         if (firstResponse.url().includes('/api/schedules') && !firstResponse.url().includes('delete')) {
@@ -55,6 +58,7 @@ test.describe('Calendar Tests', () => {
             expect(schedulesData[0].createdAt.startsWith(today)).toBeTruthy();
             expect(schedulesData[0].updatedAt.startsWith(today)).toBeTruthy();
         }
+        console.log('dates verified');
 
         await close();
     });
