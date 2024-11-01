@@ -4,7 +4,7 @@ When hired, I plan to focus on the following key areas to enhance the quality as
 
 - **Work with stakeholders** to identify critical test flows and automate those first.
 - **Implement Secrets Manager** to obfuscate sensitive data.
-- **Collaborate with development** to implement data-testid's on existing elements and to be used on all elements going forward for better test targeting.
+- **Collaborate with development** to implement data-testid's on existing elements and all elements going forward for better test targeting.
 - **Train QA team** on how to effectively use the Playwright project to maximize its benefits.
 
 ## Overview
