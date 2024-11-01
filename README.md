@@ -11,14 +11,14 @@ When hired, I plan to focus on the following key areas to enhance the quality as
 ## Overview
 The **Meets More Application** project is a Playwright repository designed to test the frontend and API of the Meets More application, and to demonstrate what benefits Evan Albright can bring to the team.
 
-## Quality of Life Features
+## Features
 
-This project includes several quality of life features that enhance the development and testing experience:
+This project includes quality of life features that enhance the development and testing experience:
 
-- **GitHub Workflow**: Automatically runs tests when committing to a pull request, ensuring code quality and reducing manual testing efforts.
+- **GitHub Workflow**: Automatically runs tests on commit, ensuring code quality and reducing manual testing efforts.
 - **Global Setup**: A `global.setup` script that logs in, saves the storage state, and stores the authentication token for future use, facilitating seamless API testing.
-- **Auto-Formatting**: Automatically corrects indentation, missing semicolons, unused imports, and other formatting issues, ensuring consistent code style and reducing formatting issues.
 - **Utility Functions**: A `utilities` folder containing helper functions for common tasks such as context creation, API requests, and more.
+- **Auto-Formatting**: Automatically corrects indentation, missing semicolons, unused imports, and other formatting issues, ensuring consistent code style and reducing formatting issues.
 
 ## Getting Started
 These instructions will help you set up the project locally for development and testing purposes.
