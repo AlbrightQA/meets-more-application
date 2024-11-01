@@ -5,8 +5,8 @@ If hired, I plan to focus on the following key areas to enhance the quality assu
 **Work with stakeholders** to identify critical test flows and automate those first.
 **Implement Secrets Manager** to obfuscate sensitive data.
 **Implement API testing** to ensure backend reliability.
-**Push for data-test-id's** to be used on all elements going forward for better test targeting.
-**Collaborate with development** to add data-test-id's to existing elements for consistency.
+**Push for data-testid's** to be used on all elements going forward for better test targeting.
+**Collaborate with development** to add data-testid's to existing elements for consistency.
 **Train QA team** on how to effectively use the Playwright project to maximize its benefits.
 
 ## Overview
