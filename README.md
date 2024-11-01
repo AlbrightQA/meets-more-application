@@ -25,7 +25,7 @@ These instructions will help you set up the project locally for development and 
 
 ## Prerequisites
 Make sure you have the following installed:
-- [Node.js](https://nodejs.org/) (version X.X.X)
+- [Node.js](https://nodejs.org/) (version 22.x)
 - [npm](https://www.npmjs.com/) (comes with Node.js)
 - [VS Code](https://code.visualstudio.com/) (recommended)
 
