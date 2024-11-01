@@ -8,7 +8,7 @@ When hired, I plan to focus on the following key areas to enhance the quality as
 - **Train QA team** on how to effectively use the Playwright project to maximize its benefits.
 
 ## Overview
-The **Meets More Integration** project is a Playwright repository designed to test the frontend and API of the Meets More application.
+The **Meets More Application** project is a Playwright repository designed to test the frontend and API of the Meets More application, and to demonstrate what benefits Evan Albright can bring to the team.
 
 ## Quality of Life Features
 
