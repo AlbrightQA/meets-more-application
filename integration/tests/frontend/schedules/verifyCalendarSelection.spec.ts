@@ -23,6 +23,7 @@ test.describe('Calendar Tests', () => {
         } catch (error) {
             console.log('Tooltip not found, continuing with test');
         }
+        console.log('>>>TOOLTIP HANDLED<<<');
 
         // Get today's date in ISO format (YYYY-MM-DD)
         const today = dayjs().format('YYYY-MM-DD');
@@ -35,7 +36,7 @@ test.describe('Calendar Tests', () => {
                 && response.request().method() === 'POST'
         );
         expect(firstResponse.status()).toBe(201);
-
+        console.log('>>>FIRST RESPONSE VERIFIED<<<');
         // Second click - should be the opposite of first response
         await page.locator('[data-is-disabled="false"]').first().click();
 
@@ -44,6 +45,7 @@ test.describe('Calendar Tests', () => {
                 && response.request().method() === 'POST'
         );
         expect(secondResponse.status()).toBe(201);
+        console.log('>>>SECOND RESPONSE VERIFIED<<<');
 
         // If either response was a create, verify the dates
         if (firstResponse.url().includes('/api/schedules') && !firstResponse.url().includes('delete')) {
@@ -55,7 +57,7 @@ test.describe('Calendar Tests', () => {
             expect(schedulesData[0].createdAt.startsWith(today)).toBeTruthy();
             expect(schedulesData[0].updatedAt.startsWith(today)).toBeTruthy();
         }
-
+        console.log('>>>DATES VERIFIED<<<');
         await close();
     });
 });
