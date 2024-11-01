@@ -27,7 +27,6 @@ test.describe('Service List Tests', () => {
                 const response = await request.response();
                 if (response) {
                     expect(response.status()).toBe(200);
-                    console.log('>>>SERVICE ADDITION VERIFIED<<<');
                 } else {
                     throw new Error('Response is null');
                 }
@@ -55,7 +54,6 @@ test.describe('Service List Tests', () => {
                 const response = await request.response();
                 if (response) {
                     expect(response.status()).toBe(200);
-                    console.log('>>>SERVICE DELETION VERIFIED<<<');
                 } else {
                     throw new Error('Response is null');
                 }
@@ -65,7 +63,7 @@ test.describe('Service List Tests', () => {
         await close();
     });
 
-    test('Verify Minimum Service Conut', async () => {
+    test('Verify Minimum Service Count', async () => {
         console.log('>>>VERIFY USER CANNOT HAVE LESS THAN 1 SERVICE<<<');
         const { page, close } = await createContext('business');
 
@@ -73,7 +71,6 @@ test.describe('Service List Tests', () => {
 
         // Assert that the 'Delete' button is not visible
         await expect(page.locator('button:has-text("このサービスの提供を停止する")')).toBeHidden();
-        console.log('>>>MINIMUM SERVICE COUNT VERIFIED<<<');
 
         await close();
     });
