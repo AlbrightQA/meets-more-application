@@ -9,7 +9,6 @@ integration/storageState/*
 # Other common ignores
 .DS_Store
 integration/.DS_Store
-integration/.env
 .vscode/settings.json
 *.log
 
